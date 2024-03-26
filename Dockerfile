@@ -1,7 +1,5 @@
 FROM node:lts-alpine
 
-RUN apk add openssl
-
 WORKDIR /usr/src/fake-ddns
 ADD . /usr/src/fake-ddns
 RUN npm i --production
