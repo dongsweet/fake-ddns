@@ -16,8 +16,8 @@ function init() {
     });
 
     app.get("/update", (req, res) => {
-        currentIp = req.ip || "127.0.0.1";
-        res.send("OK");
+        currentIp = req.header('x-forwarded-for') || req.ip || "127.0.0.1";
+        res.send("OK, " + currentIp);
     });
 }
 
